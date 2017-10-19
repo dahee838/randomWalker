@@ -1,0 +1,69 @@
+int rects = 10;
+
+float x[] = new float[rects];
+float y[] = new float[rects];
+float r[] = new float[rects];
+float dx[] = new float[rects];
+float dy[] = new float[rects];
+
+
+void setup()
+{
+  rectMode(CENTER);
+  size (900, 900);
+  noStroke();
+  for (int i = 0; i < rects; i++) 
+  {
+    r[i] = random(500);
+    x[i] = random(r[i]);
+    y[i] = random(r[i]);
+    dx[i] = random(-10, 50);
+    dy[i] = random(-10, 50);
+  }
+}
+
+
+void draw()
+{
+  for (int i = 0; i < rects; i++) 
+  {
+    x[i] += dx[i];
+    y[i] += dy[i];
+  }
+
+  for (int i = 0; i < rects; i++) 
+  {
+ 
+    r[i] = random(500);
+    x[i] = random(width+ r[i]);
+    y[i] = random(height + r[i]);
+    dx[i] = random(-100, 50);
+    dy[i] = random(-100, 50);
+    fill(255 ,255,255);
+    noStroke();
+    ellipse (x[i], y[i], dx[i], dy[i]);
+    ellipse (x[i], y[i], dx[i], dy[i]);
+    ellipse (x[i], y[i], dx[i], dy[i]);
+    ellipse (x[i], y[i], dx[i], dy[i]);
+    ellipse (x[i], y[i], dx[i], dy[i]);
+    ellipse (x[i], y[i], dx[i], dy[i]);
+  }
+  
+  for (int i = 0; i < rects; i++)
+  {
+ 
+    r[i] = random(500);
+    x[i] = random(width+ r[i]);
+    y[i] = random(height + r[i]);
+    dx[i] = random(-100, 50);
+    dy[i] = random(-100, 50);
+    fill(random(0) ,random(0),random(0));
+    noStroke();
+    ellipse (x[i], y[i], dx[i], dy[i]);
+    ellipse (x[i], y[i], dx[i], dy[i]);
+    ellipse (x[i], y[i], dx[i], dy[i]);
+    ellipse (x[i], y[i], dx[i], dy[i]);
+    ellipse (x[i], y[i], dx[i], dy[i]);
+    ellipse (x[i], y[i], dx[i], dy[i]);
+  }
+}
